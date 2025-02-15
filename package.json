@@ -1,0 +1,18 @@
+{
+  "name": "web-summarizer-ai",
+  "version": "1.0.0",
+  "type": "module",
+  "license": "CC0",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "server"
+  ],
+  "scripts": {
+    "dev": "turbo run dev"
+  },
+  "packageManager": "yarn@4.2.2+sha224.1e50daf19e5e249a025569752c60b88005fddf57d10fcde5fc68b88f",
+  "devDependencies": {
+    "turbo": "^2.5.0"
+  }
+}
