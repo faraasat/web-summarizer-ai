@@ -9,7 +9,9 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "turbo run dev",
+    "frontend": "yarn workspaces foreach -R --from @repo/frontend",
+    "backend": "yarn workspaces foreach -R --from @repo/backend",
+    "start:dev": "turbo run dev",
     "py-install": "turbo run py-install",
     "py-install-dev": "turbo run py-install-dev"
   },

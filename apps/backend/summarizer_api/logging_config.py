@@ -73,7 +73,7 @@ def configure_logging() -> None:
                     "class": "logging.handlers.RotatingFileHandler",
                     "level": "DEBUG",
                     "formatter": "file",
-                    "filename": "storeapi.log",
+                    "filename": "logging_config.log",
                     "maxBytes": 1024 * 1024,  # 1 MB
                     "backupCount": 5,  # total Number of files
                     "encoding": "utf8",
@@ -83,7 +83,7 @@ def configure_logging() -> None:
                     "class": "logging.handlers.RotatingFileHandler",
                     "level": "DEBUG",
                     "formatter": "file_json",
-                    "filename": "storeapi.log.json",
+                    "filename": "logging_config.log.json",
                     "maxBytes": 1024 * 1024,  # 1 MB
                     "backupCount": 5,  # total Number of files
                     "encoding": "utf8",
