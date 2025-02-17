@@ -18,20 +18,20 @@
       },
       "justMyCode": false
     },
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "Debug Next.js App",
-      "runtimeExecutable": "node",
-      "runtimeArgs": ["--require", "${workspaceFolder}/.pnp.cjs", "${workspaceFolder}/.pnp.loader.mjs"],
-      // "program": "${workspaceFolder}/packages/frontend/node_modules/.bin/next",
-      "cwd": "${workspaceFolder}/apps/frontend",
-      "env": {
-        "NODE_ENV": "development"
-      },
-      "console": "integratedTerminal",
-      "outputCapture": "std"
-    }
+    // {
+    //   "type": "node",
+    //   "request": "launch",
+    //   "name": "Debug Next.js App",
+    //   "runtimeExecutable": "node",
+    //   "runtimeArgs": ["--require", "${workspaceFolder}/.pnp.cjs", "${workspaceFolder}/.pnp.loader.mjs"],
+    //   // "program": "${workspaceFolder}/packages/frontend/node_modules/.bin/next",
+    //   "cwd": "${workspaceFolder}/apps/frontend",
+    //   "env": {
+    //     "NODE_ENV": "development"
+    //   },
+    //   "console": "integratedTerminal",
+    //   "outputCapture": "std"
+    // }
     // {
     //   "type": "node",
     //   "request": "launch",
