@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,5 +11,84 @@
 
   body {
     @apply font-sans antialiased bg-background text-foreground;
+    background: linear-gradient(to bottom, hsl(260, 30%, 5%), hsl(260, 30%, 15%));
+    background-attachment: fixed;
+    min-height: 100vh;
   }
+
+  .font-heading {
+    font-family: 'Orbitron', sans-serif;
+  }
+
+  .font-body {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+/* Metaverse glowing effects */
+.glow-text {
+  text-shadow: 0 0 10px rgba(173, 109, 255, 0.7),
+               0 0 20px rgba(173, 109, 255, 0.5),
+               0 0 30px rgba(173, 109, 255, 0.3);
+}
+
+.glow-border {
+  box-shadow: 0 0 10px rgba(173, 109, 255, 0.4),
+              0 0 20px rgba(173, 109, 255, 0.2),
+              inset 0 0 10px rgba(173, 109, 255, 0.2);
+}
+
+/* Grid background */
+.grid-bg {
+  background-image: 
+    linear-gradient(to right, rgba(173, 109, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(173, 109, 255, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Futuristic blur effect */
+.cyber-blur {
+  backdrop-filter: blur(10px);
+  background: rgba(20, 10, 35, 0.6);
+  border: 1px solid rgba(173, 109, 255, 0.2);
+}
+
+/* Animated gradient for accent elements */
+.gradient-animation {
+  background: linear-gradient(130deg, hsl(263, 90%, 51%), hsl(210, 90%, 60%), hsl(330, 90%, 60%), hsl(263, 90%, 51%));
+  background-size: 400% 400%;
+  animation: gradientShift 10s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Floating animation */
+.floating {
+  animation: floating 6s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.5s ease-out forwards;
 }
