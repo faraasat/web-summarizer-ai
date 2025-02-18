@@ -93,17 +93,17 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@eslint-community/eslint-utils", [\
-      ["npm:4.5.1", {\
-        "packageLocation": "../../../../.yarn/berry/cache/@eslint-community-eslint-utils-npm-4.5.1-88d38a08f4-10c0.zip/node_modules/@eslint-community/eslint-utils/",\
+      ["npm:4.6.0", {\
+        "packageLocation": "../../../../.yarn/berry/cache/@eslint-community-eslint-utils-npm-4.6.0-0d75f4bd68-10c0.zip/node_modules/@eslint-community/eslint-utils/",\
         "packageDependencies": [\
-          ["@eslint-community/eslint-utils", "npm:4.5.1"]\
+          ["@eslint-community/eslint-utils", "npm:4.6.0"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:c4eb0e294eb80a773177212cbe76e2e2f8e5ff4581b97db0ef8c2dbd74a56883287e90b8c93a9a718538dbd456633af9596d585f67eb637b9de909d9c539aecd#npm:4.5.1", {\
-        "packageLocation": "./.yarn/__virtual__/@eslint-community-eslint-utils-virtual-98a01dcc8c/5/.yarn/berry/cache/@eslint-community-eslint-utils-npm-4.5.1-88d38a08f4-10c0.zip/node_modules/@eslint-community/eslint-utils/",\
+      ["virtual:c4eb0e294eb80a773177212cbe76e2e2f8e5ff4581b97db0ef8c2dbd74a56883287e90b8c93a9a718538dbd456633af9596d585f67eb637b9de909d9c539aecd#npm:4.6.0", {\
+        "packageLocation": "./.yarn/__virtual__/@eslint-community-eslint-utils-virtual-ee87a89433/5/.yarn/berry/cache/@eslint-community-eslint-utils-npm-4.6.0-0d75f4bd68-10c0.zip/node_modules/@eslint-community/eslint-utils/",\
         "packageDependencies": [\
-          ["@eslint-community/eslint-utils", "virtual:c4eb0e294eb80a773177212cbe76e2e2f8e5ff4581b97db0ef8c2dbd74a56883287e90b8c93a9a718538dbd456633af9596d585f67eb637b9de909d9c539aecd#npm:4.5.1"],\
+          ["@eslint-community/eslint-utils", "virtual:c4eb0e294eb80a773177212cbe76e2e2f8e5ff4581b97db0ef8c2dbd74a56883287e90b8c93a9a718538dbd456633af9596d585f67eb637b9de909d9c539aecd#npm:4.6.0"],\
           ["@types/eslint", null],\
           ["eslint", "virtual:2e2b96aa824e69f25524ba32248150705e95794f82e879ef977ce271cd8a7c433da28fb525a30fead7618c1bb603b74f5c6ef95b6f75ec00a50dff4858ead53a#npm:9.24.0"],\
           ["eslint-visitor-keys", "npm:3.4.3"]\
@@ -1883,7 +1883,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@typescript-eslint-utils-virtual-c4eb0e294e/5/.yarn/berry/cache/@typescript-eslint-utils-npm-8.29.1-f2b2f4a68d-10c0.zip/node_modules/@typescript-eslint/utils/",\
         "packageDependencies": [\
           ["@typescript-eslint/utils", "virtual:bedac46c23a208f3a459c24b0bd6d00f48d1365581a683b6227318abbba99cc3db9a38e686b357d65e88083c0735f88bd34e47601081983758c2d32adea8e062#npm:8.29.1"],\
-          ["@eslint-community/eslint-utils", "virtual:c4eb0e294eb80a773177212cbe76e2e2f8e5ff4581b97db0ef8c2dbd74a56883287e90b8c93a9a718538dbd456633af9596d585f67eb637b9de909d9c539aecd#npm:4.5.1"],\
+          ["@eslint-community/eslint-utils", "virtual:c4eb0e294eb80a773177212cbe76e2e2f8e5ff4581b97db0ef8c2dbd74a56883287e90b8c93a9a718538dbd456633af9596d585f67eb637b9de909d9c539aecd#npm:4.6.0"],\
           ["@types/eslint", null],\
           ["@types/typescript", null],\
           ["@typescript-eslint/scope-manager", "npm:8.29.1"],\
@@ -2998,7 +2998,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/eslint-virtual-12de31c8c6/5/.yarn/berry/cache/eslint-npm-9.24.0-4c9da5b490-10c0.zip/node_modules/eslint/",\
         "packageDependencies": [\
           ["eslint", "virtual:2e2b96aa824e69f25524ba32248150705e95794f82e879ef977ce271cd8a7c433da28fb525a30fead7618c1bb603b74f5c6ef95b6f75ec00a50dff4858ead53a#npm:9.24.0"],\
-          ["@eslint-community/eslint-utils", "virtual:c4eb0e294eb80a773177212cbe76e2e2f8e5ff4581b97db0ef8c2dbd74a56883287e90b8c93a9a718538dbd456633af9596d585f67eb637b9de909d9c539aecd#npm:4.5.1"],\
+          ["@eslint-community/eslint-utils", "virtual:c4eb0e294eb80a773177212cbe76e2e2f8e5ff4581b97db0ef8c2dbd74a56883287e90b8c93a9a718538dbd456633af9596d585f67eb637b9de909d9c539aecd#npm:4.6.0"],\
           ["@eslint-community/regexpp", "npm:4.12.1"],\
           ["@eslint/config-array", "npm:0.20.0"],\
           ["@eslint/config-helpers", "npm:0.2.1"],\
