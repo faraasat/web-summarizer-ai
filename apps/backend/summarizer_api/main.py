@@ -1,12 +1,19 @@
 import logging
+import uvicorn
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, HTTPException
 from fastapi.exception_handlers import http_exception_handler
 from asgi_correlation_id import CorrelationIdMiddleware
 
 from summarizer_api.logging_config import configure_logging
+from summarizer_api.routers import summarize as summarize_router
+from summarizer_api.config import config
 
 logger = logging.getLogger(__name__)
+
+
+def build_api_path(path: str) -> str:
+    return f"/api/v1/{path}"
 
 
 @asynccontextmanager
@@ -19,8 +26,22 @@ app = FastAPI(lifespan=lifespan)
 
 app.add_middleware(CorrelationIdMiddleware)
 
+app.include_router(
+    summarize_router.router,
+    prefix=build_api_path("summarize"),
+    tags=["summarize"],
+)
+
 
 @app.exception_handler(HTTPException)
 async def http_exception_handle_logging(request, exc):
     logger.error(f"HTTPException: {exc.status_code} {exc.detail}")
     return await http_exception_handler(request, exc)
+
+if __name__ == "__main__":
+    port = int(config.APP_PORT)
+
+    logger.info("Starting server...")
+    logger.info(f"Using port: {port}")
+
+    uvicorn.run(app, host="0.0.0.0", port=port)

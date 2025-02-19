@@ -95,7 +95,7 @@ def configure_logging() -> None:
                     "handlers": ["default", "rotating_file", "rotating_file_json"],
                     "level": "INFO",
                 },
-                "storeapi": {
+                "summarizer_api": {
                     "handlers": handlers,
                     "level": "DEBUG" if isinstance(config, DevConfig) else "INFO",
                     "propagate": False,

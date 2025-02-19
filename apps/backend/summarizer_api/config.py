@@ -12,6 +12,7 @@ class BaseConfig(BaseSettings):
 
 class GlobalConfig(BaseConfig):
     AI_MODEL_KEY: str = ""
+    APP_PORT: Optional[str] = "8000"
 
 
 class ProdConfig(GlobalConfig):
@@ -35,7 +36,7 @@ def get_config(env_state: str):
     if env_state not in configs:
         return configs["dev"]
 
-    return configs[env_state]
+    return configs[env_state]()
 
 
-config = get_config(BaseConfig().ENV_STATE)
+config = get_config(BaseConfig().ENV_STATE)()
