@@ -21,7 +21,7 @@ export default function HeroSection() {
             </div>
             
             <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-white glow-text leading-tight">
-              Summarize Any Website <span className="text-primary gradient-animation bg-clip-text text-transparent">Instantly</span>
+              Summarize Any Website <span className="text-primary animate-pulse">Instantly</span>
             </h1>
             <p className="font-body text-lg text-gray-300 md:pr-12">
               Get concise, AI-powered summaries of any website or web app. Save time and extract the key information you need without having to read everything.
@@ -60,8 +60,8 @@ export default function HeroSection() {
                 AI-Powered
               </div>
               <div className="absolute bottom-6 left-6 right-6 cyber-blur rounded-lg p-3 border border-white/10">
-                <div className="h-1 w-2/3 bg-primary/50 rounded-full"></div>
-                <div className="mt-2 text-xs text-white/70 font-body">Content summarization in progress...</div>
+                <div className="h-1 w-2/3 bg-primary/50 rounded-full progress-bar"></div>
+                <div className="mt-2 text-xs text-white/70 font-body pulse-text">Content summarization in progress...</div>
               </div>
             </div>
           </div>

@@ -131,10 +131,20 @@ export default function SummarizerForm({ onSummaryCreated }: SummarizerFormProps
         
         <Button 
           type="submit" 
-          className="w-full"
+          className="w-full hover-lift relative overflow-hidden"
           disabled={summarizeMutation.isPending}
         >
-          {summarizeMutation.isPending ? "Generating Summary..." : "Generate Summary"}
+          {summarizeMutation.isPending ? (
+            <span className="flex items-center justify-center">
+              <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
+              <span className="pulse-text">Generating Neural Summary...</span>
+            </span>
+          ) : (
+            <span className="flex items-center justify-center">
+              Generate Summary
+            </span>
+          )}
+          {summarizeMutation.isPending && <div className="absolute inset-0 progress-bar opacity-10"></div>}
         </Button>
       </form>
     </Form>

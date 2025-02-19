@@ -76,7 +76,7 @@ export default function BenefitsSection() {
           {benefits.map((benefit, index) => (
             <div 
               key={index} 
-              className="cyber-blur rounded-xl p-6 border border-white/10 backdrop-blur-md hover:border-primary/30 transition-all hover:shadow-lg hover:shadow-primary/5 glow-border relative overflow-hidden group fade-in-up"
+              className="cyber-blur rounded-xl p-6 border border-white/10 backdrop-blur-md hover:border-primary/30 transition-all hover:shadow-lg hover:shadow-primary/5 glow-border relative overflow-hidden group fade-in-up hover-lift"
               style={{
                 transitionDelay: benefit.delay,
                 animationDelay: benefit.delay

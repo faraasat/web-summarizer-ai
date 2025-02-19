@@ -72,7 +72,7 @@ export default function HowToUseSection() {
               className="relative flex flex-col items-center text-center fade-in-up"
               style={{ animationDelay: step.delay }}
             >
-              <div className={`w-16 h-16 flex items-center justify-center rounded-full bg-gradient-to-br ${step.color} text-white mb-5 z-10 shadow-lg border border-white/20 glow-border`}>
+              <div className={`w-16 h-16 flex items-center justify-center rounded-full bg-gradient-to-br ${step.color} text-white mb-5 z-10 shadow-lg border border-white/20 glow-border hover-lift`}>
                 <div className="text-xl font-bold mr-1">{step.number}</div>
                 {step.icon}
               </div>
@@ -101,7 +101,7 @@ export default function HowToUseSection() {
                   <Play className="w-10 h-10 ml-1" />
                 </div>
               </div>
-              <p className="text-2xl font-heading font-semibold mb-3 glow-text">Watch Demo</p>
+              <p className="text-2xl font-heading font-semibold mb-3 glow-text pulse-text">Watch Demo</p>
               <p className="text-gray-300 font-body max-w-2xl">
                 See how our neural network processes complex web content into concise, actionable summaries in seconds.
               </p>

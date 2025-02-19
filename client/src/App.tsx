@@ -6,6 +6,8 @@ import Footer from "@/components/layout/footer";
 import Home from "@/pages/home";
 import Summarizer from "@/pages/summarizer";
 import NotFound from "@/pages/not-found";
+import { ThemeProvider } from "@/contexts/ThemeContext";
+import { Toaster } from "@/components/ui/toaster";
 
 function Router() {
   return (
@@ -17,6 +19,7 @@ function Router() {
         <Route component={NotFound} />
       </Switch>
       <Footer />
+      <Toaster />
     </div>
   );
 }
@@ -24,7 +27,9 @@ function Router() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <Router />
+      <ThemeProvider>
+        <Router />
+      </ThemeProvider>
     </QueryClientProvider>
   );
 }
