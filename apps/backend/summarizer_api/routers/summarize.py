@@ -2,7 +2,8 @@ import logging
 
 from fastapi import APIRouter
 
-from summarizer_api.config import config
+from summarizer_api.models.summarize import SummarizeBody, SummarizeResponse
+from summarizer_api.services.summarize import summarizeService
 
 logger = logging.getLogger(__name__)
 
@@ -19,8 +20,10 @@ async def test_route():
 
 
 # api/v1/summarize
-@router.post("/", status_code=200)
-async def summarize_route():
+@router.post("/", status_code=200, response_model=SummarizeResponse)
+async def summarize_route(summarize_body: SummarizeBody):
     logger.info("Summarize route called")
 
-    return {"message": "Test route called"}
+    resp = await summarizeService(summarize_body)
+
+    return resp
