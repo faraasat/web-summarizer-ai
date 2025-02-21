@@ -13,6 +13,7 @@ class BaseConfig(BaseSettings):
 class GlobalConfig(BaseConfig):
     AI_MODEL_KEY: str = ""
     APP_PORT: Optional[str] = "8000"
+    AI_MODEL_BASE_URL: str = ""
 
 
 class ProdConfig(GlobalConfig):

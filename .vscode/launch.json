@@ -17,7 +17,7 @@
         "PYTHONPATH": "${workspaceFolder}/apps/backend/.venv/lib/python"
       },
       "justMyCode": false
-    },
+    }
     // {
     //   "type": "node",
     //   "request": "launch",

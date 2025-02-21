@@ -7,3 +7,7 @@ logtail-python
 aiofiles
 asgi_correlation_id
 rich
+openai
+bs4
+selenium
+webdriver_manager
