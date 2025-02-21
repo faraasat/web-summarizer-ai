@@ -60,7 +60,7 @@ export default function BenefitsSection() {
           <div className="absolute left-1/2 -translate-x-1/2 -top-10 w-40 h-1 gradient-animation rounded-full blur-sm opacity-70"></div>
           
           <h2 className="font-heading font-bold text-3xl md:text-4xl text-white glow-text">
-            Why Use Our <span className="text-primary">Metaverse</span> Summarizer?
+            Why Use Our <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-violet-500 px-1">Metaverse</span> Summarizer?
           </h2>
           <p className="mt-4 text-lg text-gray-300 max-w-3xl mx-auto font-body">
             Our AI-powered summarization leverages advanced models to extract essential information with unprecedented efficiency.

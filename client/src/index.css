@@ -188,6 +188,39 @@ body.theme-classic {
   100% { transform: translateX(400%); }
 }
 
+/* Directional progress bar animations */
+.progress-bar-left-to-right::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 30%;
+  background-color: rgba(255, 255, 255, 0.3);
+  animation: progressMoveLeftToRight 3s linear infinite;
+}
+
+@keyframes progressMoveLeftToRight {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(400%); }
+}
+
+.progress-bar-right-to-left::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 30%;
+  background-color: rgba(255, 255, 255, 0.3);
+  animation: progressMoveRightToLeft 3s linear infinite;
+}
+
+@keyframes progressMoveRightToLeft {
+  0% { transform: translateX(400%); }
+  100% { transform: translateX(-100%); }
+}
+
 /* Custom theme-specific styles for components */
 
 /* Navbar cyber-blur */

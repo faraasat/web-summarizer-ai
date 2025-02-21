@@ -58,7 +58,7 @@ export default function HowToUseSection() {
           <div className="absolute left-1/2 -translate-x-1/2 -top-10 w-40 h-1 gradient-animation rounded-full blur-sm opacity-70"></div>
           
           <h2 className="font-heading font-bold text-3xl md:text-4xl text-white glow-text">
-            How Our <span className="text-primary">Neural</span> Summarizer Works
+            How Our <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-violet-500 px-1">Neural</span> Summarizer Works
           </h2>
           <p className="mt-4 text-lg text-gray-300 max-w-3xl mx-auto font-body">
             Experience a revolutionary approach to content summarization in four simple steps.
@@ -68,10 +68,21 @@ export default function HowToUseSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20 relative">
           {/* Animated connection lines between steps */}
           <div className="hidden lg:block absolute top-24 left-[calc(25%+1rem)] w-[calc(50%-2rem)] h-0.5 z-0">
-            <div className="h-full w-full bg-gradient-to-r from-blue-500 via-violet-500 to-fuchsia-500 relative overflow-hidden progress-bar"></div>
+            <div className="h-full w-full bg-gradient-to-r from-blue-500 via-violet-500 to-fuchsia-500 relative overflow-hidden progress-bar-left-to-right"></div>
           </div>
           <div className="hidden lg:block absolute top-24 left-[calc(75%+1rem)] w-[calc(25%-3rem)] h-0.5 z-0">
-            <div className="h-full w-full bg-gradient-to-r from-fuchsia-500 to-cyan-500 relative overflow-hidden progress-bar"></div>
+            <div className="h-full w-full bg-gradient-to-r from-fuchsia-500 to-cyan-500 relative overflow-hidden progress-bar-left-to-right"></div>
+          </div>
+          
+          {/* Additional connecting lines (vertical) */}
+          <div className="hidden lg:block absolute top-[calc(24px-2rem)] left-[25%] w-0.5 h-[2rem] z-0">
+            <div className="h-full w-full bg-gradient-to-b from-blue-500 to-blue-500/50 relative"></div>
+          </div>
+          <div className="hidden lg:block absolute top-[calc(24px-2rem)] left-[50%] w-0.5 h-[2rem] z-0">
+            <div className="h-full w-full bg-gradient-to-b from-violet-500 to-violet-500/50 relative"></div>
+          </div>
+          <div className="hidden lg:block absolute top-[calc(24px-2rem)] left-[75%] w-0.5 h-[2rem] z-0">
+            <div className="h-full w-full bg-gradient-to-b from-fuchsia-500 to-fuchsia-500/50 relative"></div>
           </div>
           
           {steps.map((step, index) => (
