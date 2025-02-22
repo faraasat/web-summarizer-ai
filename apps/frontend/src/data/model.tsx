@@ -22,10 +22,6 @@
    ]
  */
 
-// message types:
-// 1 = role="user" content=""
-// 2 = role="user" content: [{type: "text", text: ""}]
-
 export interface IModelType {
   modelName: string;
   model: string;

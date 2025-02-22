@@ -1,64 +1,64 @@
-{
-  "version": "0.2.0",
-  // "compounds": [
-  //   {
-  //     "name": "Next.js: Full Stack Debug",
-  //     "configurations": ["Next.js: Debug Server", "Next.js: Debug Client"]
-  //   }
-  // ],
-  "configurations": [
-    {
-      "name": "Pyton Backend",
-      "type": "debugpy",
-      "request": "launch",
-      "program": "${workspaceFolder}/apps/backend/summarizer_api/main.py",
-      "console": "integratedTerminal",
-      "env": {
-        "PYTHONPATH": "${workspaceFolder}/apps/backend/.venv/lib/python"
-      },
-      "justMyCode": false
-    }
-    // {
-    //   "type": "node",
-    //   "request": "launch",
-    //   "name": "Debug Next.js App",
-    //   "runtimeExecutable": "node",
-    //   "runtimeArgs": ["--require", "${workspaceFolder}/.pnp.cjs", "${workspaceFolder}/.pnp.loader.mjs"],
-    //   // "program": "${workspaceFolder}/packages/frontend/node_modules/.bin/next",
-    //   "cwd": "${workspaceFolder}/apps/frontend",
-    //   "env": {
-    //     "NODE_ENV": "development"
-    //   },
-    //   "console": "integratedTerminal",
-    //   "outputCapture": "std"
-    // }
-    // {
-    //   "type": "node",
-    //   "request": "launch",
-    //   "name": "Next.js: Debug Server",
-    //   "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/next",
-    //   "runtimeArgs": ["dev"],
-    //   "console": "integratedTerminal",
-    //   "skipFiles": [
-    //     "<node_internals>/**",
-    //     "${workspaceFolder}/node_modules/**"
-    //   ],
-    //   "cwd": "${workspaceFolder}"
-    // },
-    // {
-    //   "type": "chrome",
-    //   "request": "launch",
-    //   "name": "Next.js: Debug Client",
-    //   "url": "http://localhost:3000",
-    //   "webRoot": "${workspaceFolder}"
-    // },
-    // {
-    //   "type": "node",
-    //   "request": "launch",
-    //   "name": "Debug: service test",
-    //   "skipFiles": ["<node_internals>/**", "node_modules/**"],
-    //   "runtimeArgs": ["-r", "../.pnp.js"],
-    //   "cwd": "${workspaceFolder}/packages/frontend",
-    // }
-  ]
-}
+// {
+//   "version": "0.2.0",
+//   // "compounds": [
+//   //   {
+//   //     "name": "Next.js: Full Stack Debug",
+//   //     "configurations": ["Next.js: Debug Server", "Next.js: Debug Client"]
+//   //   }
+//   // ],
+//   "configurations": [
+//     {
+//       "name": "Pyton Backend",
+//       "type": "debugpy",
+//       "request": "launch",
+//       "program": "${workspaceFolder}/apps/backend/summarizer_api/main.py",
+//       "console": "integratedTerminal",
+//       "env": {
+//         "PYTHONPATH": "${workspaceFolder}/apps/backend/.venv/lib/python"
+//       },
+//       "justMyCode": false
+//     }
+//     // {
+//     //   "type": "node",
+//     //   "request": "launch",
+//     //   "name": "Debug Next.js App",
+//     //   "runtimeExecutable": "node",
+//     //   "runtimeArgs": ["--require", "${workspaceFolder}/.pnp.cjs", "${workspaceFolder}/.pnp.loader.mjs"],
+//     //   // "program": "${workspaceFolder}/packages/frontend/node_modules/.bin/next",
+//     //   "cwd": "${workspaceFolder}/apps/frontend",
+//     //   "env": {
+//     //     "NODE_ENV": "development"
+//     //   },
+//     //   "console": "integratedTerminal",
+//     //   "outputCapture": "std"
+//     // }
+//     // {
+//     //   "type": "node",
+//     //   "request": "launch",
+//     //   "name": "Next.js: Debug Server",
+//     //   "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/next",
+//     //   "runtimeArgs": ["dev"],
+//     //   "console": "integratedTerminal",
+//     //   "skipFiles": [
+//     //     "<node_internals>/**",
+//     //     "${workspaceFolder}/node_modules/**"
+//     //   ],
+//     //   "cwd": "${workspaceFolder}"
+//     // },
+//     // {
+//     //   "type": "chrome",
+//     //   "request": "launch",
+//     //   "name": "Next.js: Debug Client",
+//     //   "url": "http://localhost:3000",
+//     //   "webRoot": "${workspaceFolder}"
+//     // },
+//     // {
+//     //   "type": "node",
+//     //   "request": "launch",
+//     //   "name": "Debug: service test",
+//     //   "skipFiles": ["<node_internals>/**", "node_modules/**"],
+//     //   "runtimeArgs": ["-r", "../.pnp.js"],
+//     //   "cwd": "${workspaceFolder}/packages/frontend",
+//     // }
+//   ]
+// }
