@@ -28,8 +28,8 @@ export function ThemeSwitcher() {
       id: 'light', 
       name: 'Light', 
       icon: <Sun className="w-4 h-4" />,
-      color: 'from-yellow-400 to-orange-500',
-      bgColor: 'bg-gradient-to-r from-yellow-400/20 to-orange-500/20'
+      color: 'from-violet-500 to-purple-600',
+      bgColor: 'bg-gradient-to-r from-violet-500/20 to-purple-600/20'
     },
     { 
       id: 'dark', 
@@ -42,15 +42,15 @@ export function ThemeSwitcher() {
       id: 'modern', 
       name: 'Modern', 
       icon: <Monitor className="w-4 h-4" />,
-      color: 'from-violet-600 to-purple-700',
-      bgColor: 'bg-gradient-to-r from-violet-600/20 to-purple-700/20'
+      color: 'from-violet-500 to-fuchsia-600',
+      bgColor: 'bg-gradient-to-r from-violet-500/20 to-fuchsia-600/20'
     },
     { 
       id: 'classic', 
       name: 'Classic', 
       icon: <Star className="w-4 h-4" />,
-      color: 'from-blue-800 to-indigo-900',
-      bgColor: 'bg-gradient-to-r from-blue-800/20 to-indigo-900/20'
+      color: 'from-violet-700 to-indigo-800',
+      bgColor: 'bg-gradient-to-r from-violet-700/20 to-indigo-800/20'
     },
   ];
 

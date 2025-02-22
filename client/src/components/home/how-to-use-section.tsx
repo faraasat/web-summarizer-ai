@@ -55,8 +55,6 @@ export default function HowToUseSection() {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16 relative">
-          <div className="absolute left-1/2 -translate-x-1/2 -top-10 w-40 h-1 gradient-animation rounded-full blur-sm opacity-70"></div>
-          
           <h2 className="font-heading font-bold text-3xl md:text-4xl text-white glow-text">
             How Our <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-violet-500 px-1">Neural</span> Summarizer Works
           </h2>

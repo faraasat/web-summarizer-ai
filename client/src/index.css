@@ -17,7 +17,7 @@
 
   /* Theme-specific styles */
   body.theme-modern {
-    background: linear-gradient(to bottom, hsl(260, 30%, 5%), hsl(260, 30%, 15%));
+    background: linear-gradient(135deg, hsl(260, 35%, 8%), hsl(280, 40%, 12%));
     @apply text-gray-100;
   }
 
@@ -27,12 +27,12 @@
   }
 
   body.theme-light {
-    background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+    background: linear-gradient(135deg, #f0f4ff, #e6eeff);
     @apply text-gray-800;
   }
 
   body.theme-classic {
-    background: linear-gradient(to bottom, #1a274a, #0d1b3e);
+    background: linear-gradient(135deg, #0c1445, #1c2760);
     @apply text-gray-100;
   }
 
@@ -56,9 +56,9 @@
 }
 
 body.theme-modern {
-  --primary: var(--primary-dark);
-  --secondary: var(--secondary-dark);
-  --accent: var(--accent-dark);
+  --primary: #8b5cf6;
+  --secondary: #3b82f6;
+  --accent: #ec4899;
 }
 
 body.theme-dark {
@@ -68,15 +68,15 @@ body.theme-dark {
 }
 
 body.theme-light {
-  --primary: #8b5cf6;
+  --primary: #6d28d9;
   --secondary: #3b82f6;
-  --accent: #ec4899;
+  --accent: #f472b6;
 }
 
 body.theme-classic {
-  --primary: #4c1d95;
-  --secondary: #1e40af;
-  --accent: #be123c;
+  --primary: #7c3aed;
+  --secondary: #2563eb;
+  --accent: #c026d3;
 }
 
 /* Metaverse glowing effects */
@@ -86,10 +86,60 @@ body.theme-classic {
                0 0 30px rgba(173, 109, 255, 0.3);
 }
 
+/* Theme-specific glow text effects */
+body.theme-modern .glow-text {
+  text-shadow: 0 0 10px rgba(139, 92, 246, 0.7),
+               0 0 20px rgba(139, 92, 246, 0.5),
+               0 0 30px rgba(139, 92, 246, 0.3);
+}
+
+body.theme-dark .glow-text {
+  text-shadow: 0 0 10px rgba(109, 40, 217, 0.7),
+               0 0 20px rgba(109, 40, 217, 0.5),
+               0 0 30px rgba(109, 40, 217, 0.3);
+}
+
+body.theme-light .glow-text {
+  text-shadow: 0 0 10px rgba(109, 40, 217, 0.5),
+               0 0 20px rgba(109, 40, 217, 0.3),
+               0 0 30px rgba(109, 40, 217, 0.2);
+}
+
+body.theme-classic .glow-text {
+  text-shadow: 0 0 10px rgba(124, 58, 237, 0.7),
+               0 0 20px rgba(124, 58, 237, 0.5),
+               0 0 30px rgba(124, 58, 237, 0.3);
+}
+
 .glow-border {
   box-shadow: 0 0 10px rgba(173, 109, 255, 0.4),
               0 0 20px rgba(173, 109, 255, 0.2),
               inset 0 0 10px rgba(173, 109, 255, 0.2);
+}
+
+/* Theme-specific glow border effects */
+body.theme-modern .glow-border {
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.4),
+              0 0 20px rgba(139, 92, 246, 0.2),
+              inset 0 0 10px rgba(139, 92, 246, 0.2);
+}
+
+body.theme-dark .glow-border {
+  box-shadow: 0 0 10px rgba(109, 40, 217, 0.4),
+              0 0 20px rgba(109, 40, 217, 0.2),
+              inset 0 0 10px rgba(109, 40, 217, 0.2);
+}
+
+body.theme-light .glow-border {
+  box-shadow: 0 0 10px rgba(109, 40, 217, 0.3),
+              0 0 20px rgba(109, 40, 217, 0.1),
+              inset 0 0 10px rgba(109, 40, 217, 0.1);
+}
+
+body.theme-classic .glow-border {
+  box-shadow: 0 0 10px rgba(124, 58, 237, 0.4),
+              0 0 20px rgba(124, 58, 237, 0.2),
+              inset 0 0 10px rgba(124, 58, 237, 0.2);
 }
 
 /* Grid background */
@@ -100,11 +150,57 @@ body.theme-classic {
   background-size: 20px 20px;
 }
 
+/* Theme-specific grid */
+body.theme-modern .grid-bg {
+  background-image: 
+    linear-gradient(to right, rgba(139, 92, 246, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(139, 92, 246, 0.1) 1px, transparent 1px);
+}
+
+body.theme-dark .grid-bg {
+  background-image: 
+    linear-gradient(to right, rgba(109, 40, 217, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(109, 40, 217, 0.1) 1px, transparent 1px);
+}
+
+body.theme-light .grid-bg {
+  background-image: 
+    linear-gradient(to right, rgba(109, 40, 217, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(109, 40, 217, 0.08) 1px, transparent 1px);
+}
+
+body.theme-classic .grid-bg {
+  background-image: 
+    linear-gradient(to right, rgba(124, 58, 237, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(124, 58, 237, 0.1) 1px, transparent 1px);
+}
+
 /* Futuristic blur effect */
 .cyber-blur {
   backdrop-filter: blur(10px);
   background: rgba(20, 10, 35, 0.6);
   border: 1px solid rgba(173, 109, 255, 0.2);
+}
+
+/* Theme-specific cyber blur */
+body.theme-modern .cyber-blur {
+  background: rgba(25, 15, 40, 0.6);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+body.theme-dark .cyber-blur {
+  background: rgba(15, 15, 20, 0.6);
+  border: 1px solid rgba(109, 40, 217, 0.2);
+}
+
+body.theme-light .cyber-blur {
+  background: rgba(240, 245, 255, 0.5);
+  border: 1px solid rgba(109, 40, 217, 0.15);
+}
+
+body.theme-classic .cyber-blur {
+  background: rgba(10, 20, 50, 0.6);
+  border: 1px solid rgba(124, 58, 237, 0.2);
 }
 
 /* Animated gradient for accent elements */
