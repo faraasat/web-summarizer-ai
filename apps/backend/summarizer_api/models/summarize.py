@@ -10,4 +10,4 @@ class SummarizeBody(BaseModel):
 
 
 class SummarizeResponse(BaseModel):
-    summary: str
+    content: str

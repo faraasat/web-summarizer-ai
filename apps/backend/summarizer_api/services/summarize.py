@@ -107,14 +107,19 @@ async def summarizeService(body: SummarizeBody) -> SummarizeResponse:
     data = {**body.model_dump()}
     model = data["model"]
     url = data["url"]
+    messageType = data["messageType"]
 
     logger.info(f"Scrapping Site {url}")
     site = Website(url, use_js=True)
 
-    prompt = messageTypes[f"{data["messageType"]}"](site)
+    prompt = messageTypes[f"{messageType}"](site)
+
+    logger.info(
+        f"Fetching summary for url: {url} - model: {model} - message type: {messageType}"
+    )
 
     summary = summarize_site(
         config.AI_MODEL_BASE_URL, config.AI_MODEL_KEY, model, prompt
     )
 
-    return {"summary": summary}
+    return {"content": summary}
