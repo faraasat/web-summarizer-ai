@@ -17,7 +17,7 @@
 
   /* Theme-specific styles */
   body.theme-modern {
-    background: linear-gradient(135deg, hsl(260, 35%, 8%), hsl(280, 40%, 12%));
+    background: linear-gradient(135deg, #271866, #321980);
     @apply text-gray-100;
   }
 
@@ -27,12 +27,12 @@
   }
 
   body.theme-light {
-    background: linear-gradient(135deg, #f0f4ff, #e6eeff);
+    background: linear-gradient(135deg, #f8fafc, #f1f5f9);
     @apply text-gray-800;
   }
 
   body.theme-classic {
-    background: linear-gradient(135deg, #0c1445, #1c2760);
+    background: linear-gradient(135deg, #1e1b4b, #1e3a8a);
     @apply text-gray-100;
   }
 
@@ -56,9 +56,9 @@
 }
 
 body.theme-modern {
-  --primary: #8b5cf6;
-  --secondary: #3b82f6;
-  --accent: #ec4899;
+  --primary: #9333ea;    /* Brighter purple */
+  --secondary: #4f46e5;  /* Indigo */
+  --accent: #e879f9;     /* Brighter pink */
 }
 
 body.theme-dark {
@@ -68,15 +68,15 @@ body.theme-dark {
 }
 
 body.theme-light {
-  --primary: #6d28d9;
+  --primary: #8b5cf6;
   --secondary: #3b82f6;
-  --accent: #f472b6;
+  --accent: #e11d48;    /* More saturated accent for better contrast */
 }
 
 body.theme-classic {
-  --primary: #7c3aed;
-  --secondary: #2563eb;
-  --accent: #c026d3;
+  --primary: #8b5cf6;    /* Lighter purple than dark theme */
+  --secondary: #3b82f6;  /* Lighter blue */
+  --accent: #d946ef;     /* Bright magenta */
 }
 
 /* Metaverse glowing effects */
@@ -88,9 +88,9 @@ body.theme-classic {
 
 /* Theme-specific glow text effects */
 body.theme-modern .glow-text {
-  text-shadow: 0 0 10px rgba(139, 92, 246, 0.7),
-               0 0 20px rgba(139, 92, 246, 0.5),
-               0 0 30px rgba(139, 92, 246, 0.3);
+  text-shadow: 0 0 10px rgba(147, 51, 234, 0.7),
+               0 0 20px rgba(147, 51, 234, 0.5),
+               0 0 30px rgba(147, 51, 234, 0.3);
 }
 
 body.theme-dark .glow-text {
@@ -100,15 +100,16 @@ body.theme-dark .glow-text {
 }
 
 body.theme-light .glow-text {
-  text-shadow: 0 0 10px rgba(109, 40, 217, 0.5),
-               0 0 20px rgba(109, 40, 217, 0.3),
-               0 0 30px rgba(109, 40, 217, 0.2);
+  text-shadow: 0 0 10px rgba(139, 92, 246, 0.6),
+               0 0 20px rgba(139, 92, 246, 0.4),
+               0 0 30px rgba(139, 92, 246, 0.3);
+  color: #4c1d95; /* Make the text darker in light theme for better contrast */
 }
 
 body.theme-classic .glow-text {
-  text-shadow: 0 0 10px rgba(124, 58, 237, 0.7),
-               0 0 20px rgba(124, 58, 237, 0.5),
-               0 0 30px rgba(124, 58, 237, 0.3);
+  text-shadow: 0 0 10px rgba(139, 92, 246, 0.7),
+               0 0 20px rgba(139, 92, 246, 0.5),
+               0 0 30px rgba(139, 92, 246, 0.3);
 }
 
 .glow-border {
@@ -184,8 +185,8 @@ body.theme-classic .grid-bg {
 
 /* Theme-specific cyber blur */
 body.theme-modern .cyber-blur {
-  background: rgba(25, 15, 40, 0.6);
-  border: 1px solid rgba(139, 92, 246, 0.2);
+  background: rgba(30, 15, 60, 0.65);  /* More vibrant purple */
+  border: 1px solid rgba(147, 51, 234, 0.25);
 }
 
 body.theme-dark .cyber-blur {
@@ -194,13 +195,14 @@ body.theme-dark .cyber-blur {
 }
 
 body.theme-light .cyber-blur {
-  background: rgba(240, 245, 255, 0.5);
-  border: 1px solid rgba(109, 40, 217, 0.15);
+  background: rgba(240, 245, 255, 0.8);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  color: #1f2937;  /* Darker text for light theme */
 }
 
 body.theme-classic .cyber-blur {
-  background: rgba(10, 20, 50, 0.6);
-  border: 1px solid rgba(124, 58, 237, 0.2);
+  background: rgba(15, 25, 70, 0.65);  /* More blue-tinted */
+  border: 1px solid rgba(139, 92, 246, 0.25);
 }
 
 /* Animated gradient for accent elements */
@@ -328,6 +330,30 @@ body.theme-classic .cyber-blur {
 /* Theme-specific cyber text */
 .cyber-text {
   letter-spacing: 0.5px;
+}
+
+/* Theme-specific text colors */
+body.theme-light {
+  --text-color: #0f172a;  /* Darker text for better contrast on light backgrounds */
+  color: var(--text-color);
+}
+
+body.theme-light h1, 
+body.theme-light h2, 
+body.theme-light h3, 
+body.theme-light h4, 
+body.theme-light h5, 
+body.theme-light h6 {
+  color: #1e293b;
+}
+
+body.theme-light .text-white {
+  color: #1e293b;
+}
+
+body.theme-light .text-white\/70,
+body.theme-light .text-white\/80 {
+  color: #475569;
 }
 
 /* Toaster styling based on theme */
