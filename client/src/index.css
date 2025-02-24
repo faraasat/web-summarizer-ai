@@ -17,7 +17,9 @@
 
   /* Theme-specific styles */
   body.theme-modern {
-    background: linear-gradient(135deg, #271866, #321980);
+    background: linear-gradient(135deg, #271866, #4c1d95);
+    background-size: 200% 200%;
+    animation: gradientBgShift 15s ease infinite;
     @apply text-gray-100;
   }
 
@@ -27,13 +29,20 @@
   }
 
   body.theme-light {
-    background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+    background: linear-gradient(135deg, #f8fafc, #e2e8f0);
     @apply text-gray-800;
+    color-scheme: light;
   }
 
   body.theme-classic {
-    background: linear-gradient(135deg, #1e1b4b, #1e3a8a);
+    background: linear-gradient(135deg, #0f172a, #1e3a8a);
     @apply text-gray-100;
+  }
+  
+  @keyframes gradientBgShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
   }
 
   .font-heading {
@@ -68,9 +77,9 @@ body.theme-dark {
 }
 
 body.theme-light {
-  --primary: #8b5cf6;
-  --secondary: #3b82f6;
-  --accent: #e11d48;    /* More saturated accent for better contrast */
+  --primary: #6d28d9;   /* Darker purple for better contrast in light mode */
+  --secondary: #2563eb; /* Darker blue for better contrast in light mode */
+  --accent: #dc2626;    /* Brighter red for more visibility in light mode */
 }
 
 body.theme-classic {
@@ -100,16 +109,18 @@ body.theme-dark .glow-text {
 }
 
 body.theme-light .glow-text {
-  text-shadow: 0 0 10px rgba(139, 92, 246, 0.6),
-               0 0 20px rgba(139, 92, 246, 0.4),
-               0 0 30px rgba(139, 92, 246, 0.3);
+  text-shadow: 0 0 10px rgba(109, 40, 217, 0.6),
+               0 0 20px rgba(109, 40, 217, 0.4),
+               0 0 30px rgba(109, 40, 217, 0.3);
   color: #4c1d95; /* Make the text darker in light theme for better contrast */
+  font-weight: 700; /* Bolder text in light theme for better readability */
 }
 
 body.theme-classic .glow-text {
-  text-shadow: 0 0 10px rgba(139, 92, 246, 0.7),
-               0 0 20px rgba(139, 92, 246, 0.5),
-               0 0 30px rgba(139, 92, 246, 0.3);
+  text-shadow: 0 0 10px rgba(59, 130, 246, 0.7),  /* Blue glow instead of purple */
+               0 0 20px rgba(59, 130, 246, 0.5),
+               0 0 30px rgba(59, 130, 246, 0.3);
+  font-weight: 600; /* Semi-bold text for better readability */
 }
 
 .glow-border {
@@ -138,9 +149,9 @@ body.theme-light .glow-border {
 }
 
 body.theme-classic .glow-border {
-  box-shadow: 0 0 10px rgba(124, 58, 237, 0.4),
-              0 0 20px rgba(124, 58, 237, 0.2),
-              inset 0 0 10px rgba(124, 58, 237, 0.2);
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.4),
+              0 0 20px rgba(59, 130, 246, 0.2),
+              inset 0 0 10px rgba(59, 130, 246, 0.2);
 }
 
 /* Grid background */
@@ -172,8 +183,8 @@ body.theme-light .grid-bg {
 
 body.theme-classic .grid-bg {
   background-image: 
-    linear-gradient(to right, rgba(124, 58, 237, 0.1) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(124, 58, 237, 0.1) 1px, transparent 1px);
+    linear-gradient(to right, rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
 }
 
 /* Futuristic blur effect */
@@ -195,19 +206,34 @@ body.theme-dark .cyber-blur {
 }
 
 body.theme-light .cyber-blur {
-  background: rgba(240, 245, 255, 0.8);
-  border: 1px solid rgba(139, 92, 246, 0.3);
+  background: rgba(240, 245, 255, 0.85);
+  border: 1px solid rgba(109, 40, 217, 0.4);
   color: #1f2937;  /* Darker text for light theme */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 body.theme-classic .cyber-blur {
-  background: rgba(15, 25, 70, 0.65);  /* More blue-tinted */
-  border: 1px solid rgba(139, 92, 246, 0.25);
+  background: rgba(15, 30, 75, 0.7);  /* More blue-tinted and deeper */
+  border: 1px solid rgba(59, 130, 246, 0.3);  /* Blue border instead of purple */
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);  /* Blue glow */
 }
 
 /* Animated gradient for accent elements */
 .gradient-animation {
   background: linear-gradient(130deg, hsl(263, 90%, 51%), hsl(210, 90%, 60%), hsl(330, 90%, 60%), hsl(263, 90%, 51%));
+  background-size: 400% 400%;
+  animation: gradientShift 10s ease infinite;
+}
+
+/* Theme-specific gradients */
+body.theme-light .gradient-animation {
+  background: linear-gradient(130deg, hsl(263, 70%, 40%), hsl(220, 80%, 50%), hsl(330, 80%, 45%), hsl(263, 70%, 40%));
+  background-size: 400% 400%;
+  animation: gradientShift 10s ease infinite;
+}
+
+body.theme-classic .gradient-animation {
+  background: linear-gradient(130deg, hsl(217, 91%, 60%), hsl(226, 71%, 40%), hsl(239, 84%, 67%), hsl(217, 91%, 60%));
   background-size: 400% 400%;
   animation: gradientShift 10s ease infinite;
 }

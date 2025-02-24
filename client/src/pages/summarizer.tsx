@@ -24,7 +24,7 @@ export default function Summarizer() {
           <div className="absolute left-1/2 -translate-x-1/2 -top-10 w-40 h-1 gradient-animation rounded-full blur-sm opacity-70"></div>
           
           <h1 className="font-heading font-bold text-3xl md:text-4xl text-white glow-text">
-            Web <span className="text-primary gradient-animation bg-clip-text text-transparent">Metaverse</span> Summarizer
+            Web <span className="text-primary relative z-10 bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent font-bold">Metaverse</span> Summarizer
           </h1>
           <p className="mt-4 text-lg text-gray-300 max-w-3xl mx-auto font-body">
             Enter any website URL below to generate an AI-powered comprehensive summary using our advanced neural models.

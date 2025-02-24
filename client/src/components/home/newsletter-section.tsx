@@ -79,7 +79,7 @@ export default function NewsletterSection() {
                 <Mail className="w-8 h-8 text-primary" />
               </div>
               <h2 className="font-heading font-bold text-3xl md:text-4xl text-white glow-text">
-                Join Our <span className="text-primary gradient-animation bg-clip-text text-transparent">Neural</span> Network
+                Join Our <span className="text-primary relative z-10 bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent font-bold">Neural</span> Network
               </h2>
               <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto font-body">
                 Subscribe to receive updates on our latest AI models, feature enhancements, and exclusive early access.
