@@ -29,7 +29,7 @@
   }
 
   body.theme-light {
-    background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+    background: linear-gradient(135deg, #ffffff, #f1f5f9);
     @apply text-gray-800;
     color-scheme: light;
   }
@@ -177,8 +177,8 @@ body.theme-dark .grid-bg {
 
 body.theme-light .grid-bg {
   background-image: 
-    linear-gradient(to right, rgba(109, 40, 217, 0.08) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(109, 40, 217, 0.08) 1px, transparent 1px);
+    linear-gradient(to right, rgba(76, 29, 149, 0.15) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(76, 29, 149, 0.15) 1px, transparent 1px);
 }
 
 body.theme-classic .grid-bg {
@@ -206,10 +206,10 @@ body.theme-dark .cyber-blur {
 }
 
 body.theme-light .cyber-blur {
-  background: rgba(240, 245, 255, 0.85);
-  border: 1px solid rgba(109, 40, 217, 0.4);
+  background: rgba(245, 247, 255, 0.95);
+  border: 1px solid rgba(76, 29, 149, 0.5);
   color: #1f2937;  /* Darker text for light theme */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 body.theme-classic .cyber-blur {
@@ -374,12 +374,34 @@ body.theme-light h6 {
 }
 
 body.theme-light .text-white {
-  color: #1e293b;
+  color: #0f172a; /* Much darker text for maximum contrast */
+}
+
+body.theme-light .text-gray-300,
+body.theme-light .text-gray-200 {
+  color: #334155; /* Dark slate for paragraph text with better contrast */
 }
 
 body.theme-light .text-white\/70,
 body.theme-light .text-white\/80 {
-  color: #475569;
+  color: #334155; /* Consistent dark slate for better readability */
+}
+
+/* Improved contrast for form elements in light theme */
+body.theme-light input, 
+body.theme-light textarea {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-color: rgba(76, 29, 149, 0.4);
+  color: #0f172a;
+}
+
+body.theme-light input::placeholder, 
+body.theme-light textarea::placeholder {
+  color: #64748b;
+}
+
+body.theme-light .bg-transparent {
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 /* Toaster styling based on theme */
