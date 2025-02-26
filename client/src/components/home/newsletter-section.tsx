@@ -1,12 +1,14 @@
-import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import { Send, Mail, BellRing } from "lucide-react";
+import { useSubscriber } from "@/hooks/useSubscriber";
 
+/**
+ * Form validation schema for newsletter subscription
+ */
 const subscribeSchema = z.object({
   email: z.string().email("Please enter a valid email address"),
   consent: z.boolean().refine(value => value === true, {
@@ -18,6 +20,7 @@ type SubscribeFormData = z.infer<typeof subscribeSchema>;
 
 export default function NewsletterSection() {
   const { toast } = useToast();
+  const { subscribeAsync, isSubscribing } = useSubscriber();
   
   const { register, handleSubmit, formState: { errors }, reset } = useForm<SubscribeFormData>({
     resolver: zodResolver(subscribeSchema),
@@ -27,30 +30,27 @@ export default function NewsletterSection() {
     }
   });
 
-  const subscribeMutation = useMutation({
-    mutationFn: async (data: SubscribeFormData) => {
-      const res = await apiRequest("POST", "/api/subscribe", data);
-      return await res.json();
-    },
-    onSuccess: (data) => {
+  /**
+   * Form submission handler utilizing the useSubscriber hook
+   */
+  const onSubmit = async (data: SubscribeFormData) => {
+    try {
+      const result = await subscribeAsync(data.email);
+      
       toast({
         title: "Neural Link Established!",
-        description: data.message || "You've been connected to our update network.",
+        description: "You've been connected to our update network.",
         variant: "default",
       });
+      
       reset();
-    },
-    onError: (error) => {
+    } catch (error) {
       toast({
         title: "Connection Failed",
         description: error instanceof Error ? error.message : "Neural link could not be established. Please try again.",
         variant: "destructive",
       });
     }
-  });
-
-  const onSubmit = (data: SubscribeFormData) => {
-    subscribeMutation.mutate(data);
   };
 
   return (
@@ -114,9 +114,9 @@ export default function NewsletterSection() {
                   <button 
                     type="submit" 
                     className="px-8 py-4 rounded-lg gradient-animation text-white font-medium transition-all hover:shadow-lg hover:shadow-primary/20 focus:ring-2 focus:ring-primary/50 focus:outline-none glow-border disabled:opacity-70"
-                    disabled={subscribeMutation.isPending}
+                    disabled={isSubscribing}
                   >
-                    {subscribeMutation.isPending ? (
+                    {isSubscribing ? (
                       <span className="flex items-center">
                         <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
                         Connecting...

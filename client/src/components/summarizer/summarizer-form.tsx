@@ -1,24 +1,27 @@
-import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useMutation } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
-import { useToast } from "@/hooks/use-toast";
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { Summary } from "@shared/schema";
+import { useSummarizer } from "@/hooks/useSummarizer";
+import { validateUrl } from "@/lib/utils";
 
+/**
+ * Zod schema for form validation
+ * Centralizing validation logic
+ */
 const formSchema = z.object({
   url: z.string()
     .trim()
     .min(1, { message: "URL is required" })
+    .transform(val => validateUrl(val)) // Use the utility function for URL validation
     .refine(value => /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/.test(value), {
       message: "Please enter a valid URL",
     }),
-  model: z.string().min(1, { message: "Please select an AI model" }),
+  modelType: z.string().min(1, { message: "Please select an AI model" }),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -27,47 +30,44 @@ interface SummarizerFormProps {
   onSummaryCreated: (summary: Summary) => void;
 }
 
+/**
+ * SummarizerForm component
+ * Using Container pattern for managing form state and submission logic
+ */
 export default function SummarizerForm({ onSummaryCreated }: SummarizerFormProps) {
-  const { toast } = useToast();
+  // Use the custom hook that encapsulates all summarizer-related functionality
+  const { summarizeAsync, isSummarizing } = useSummarizer();
   
+  // Form setup with validation
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       url: "",
-      model: "general"
+      modelType: "general"
     }
   });
 
-  const summarizeMutation = useMutation({
-    mutationFn: async (data: FormData) => {
-      // Clean up URL (remove https:// if present, it will be added in the backend)
+  /**
+   * Form submission handler
+   * Uses the custom hook for API interaction
+   */
+  const onSubmit = async (data: FormData) => {
+    try {
+      // Clean up URL if needed
       const cleanUrl = data.url.replace(/^https?:\/\//, '');
       
-      const res = await apiRequest("POST", "/api/summarize", {
-        url: cleanUrl,
-        model: data.model
+      // Use the custom hook to handle the API call
+      const summary = await summarizeAsync({ 
+        url: cleanUrl, 
+        modelType: data.modelType 
       });
-      return await res.json();
-    },
-    onSuccess: (data) => {
-      onSummaryCreated(data);
-      toast({
-        title: "Summary generated!",
-        description: "Successfully summarized the website content.",
-        variant: "default",
-      });
-    },
-    onError: (error) => {
-      toast({
-        title: "Error",
-        description: error instanceof Error ? error.message : "Failed to generate summary. Please try again.",
-        variant: "destructive",
-      });
+      
+      // Notify parent component
+      onSummaryCreated(summary);
+    } catch (error) {
+      // Error handling is managed in the useSummarizer hook
+      console.error("Summary generation failed:", error);
     }
-  });
-
-  const onSubmit = (data: FormData) => {
-    summarizeMutation.mutate(data);
   };
 
   return (
@@ -101,7 +101,7 @@ export default function SummarizerForm({ onSummaryCreated }: SummarizerFormProps
         
         <FormField
           control={form.control}
-          name="model"
+          name="modelType"
           render={({ field }) => (
             <FormItem>
               <FormLabel>AI Model</FormLabel>
@@ -132,9 +132,9 @@ export default function SummarizerForm({ onSummaryCreated }: SummarizerFormProps
         <Button 
           type="submit" 
           className="w-full hover-lift relative overflow-hidden"
-          disabled={summarizeMutation.isPending}
+          disabled={isSummarizing}
         >
-          {summarizeMutation.isPending ? (
+          {isSummarizing ? (
             <span className="flex items-center justify-center">
               <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
               <span className="pulse-text">Generating Neural Summary...</span>
@@ -144,7 +144,7 @@ export default function SummarizerForm({ onSummaryCreated }: SummarizerFormProps
               Generate Summary
             </span>
           )}
-          {summarizeMutation.isPending && <div className="absolute inset-0 progress-bar opacity-10"></div>}
+          {isSummarizing && <div className="absolute inset-0 progress-bar opacity-10"></div>}
         </Button>
       </form>
     </Form>
