@@ -6,7 +6,7 @@ import SummarizerForm from "./summarizer-form";
 import ResultsSection from "./results-section";
 
 export interface ISummary {
-  content: string;
+  content: string | null;
   url: string;
 }
 

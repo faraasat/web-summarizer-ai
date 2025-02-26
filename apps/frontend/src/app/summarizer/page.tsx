@@ -14,7 +14,7 @@ export default function Summarizer() {
         <div className="grid-bg absolute inset-0"></div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-15">
         <div className="text-center mb-10 relative">
           <div className="absolute left-1/2 -translate-x-1/2 -top-10 w-40 h-1 gradient-animation rounded-full blur-sm opacity-70"></div>
 
@@ -47,11 +47,7 @@ export default function Summarizer() {
           </div>
 
           {/* Main container */}
-          <div className="cyber-blur rounded-xl p-6 md:p-8 border border-white/10 glow-border">
-            <div className="absolute inset-0 overflow-hidden rounded-xl">
-              <div className="grid-bg absolute inset-0 opacity-20"></div>
-            </div>
-
+          <div className="z-10 cyber-blur rounded-xl p-6 md:p-8 border border-white/10 glow-border">
             <SummarizerRoot />
           </div>
         </div>

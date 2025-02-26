@@ -1,3 +1,5 @@
+"use client";
+
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -48,7 +50,7 @@ const formSchema = z.object({
 type FormData = z.infer<typeof formSchema>;
 
 interface SummarizerFormProps {
-  onSummaryCreated: (summary: ISummary) => void;
+  onSummaryCreated: (summary: ISummary | null) => void;
 }
 
 export default function SummarizerForm({
@@ -59,18 +61,20 @@ export default function SummarizerForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
       url: "",
-      modelType: modelNames[0],
+      modelType: modelTypes["DeepSeek: R1 (free)"].modelName,
     },
   });
 
   const onSubmit = async (data: FormData) => {
     setIsSummarizing(true);
     try {
-      const cleanUrl = data.url.replace(/^https?:\/\//, "");
+      onSummaryCreated(null);
+
+      const cleanUrl = data.url.replace(/^https?:\/\//, "https://");
 
       const summary = await getSummary(cleanUrl, modelTypes[data.modelType]);
 
-      onSummaryCreated(summary);
+      onSummaryCreated({ content: summary.content, url: cleanUrl });
     } catch (error) {
       toast.error("Generation Error", {
         description: "An Error Occurred While Generating Summary",
