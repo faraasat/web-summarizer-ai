@@ -353,6 +353,24 @@ body.theme-classic .gradient-animation {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Theme-specific navbar styles */
+body.theme-light .cyber-blur-nav {
+  background-color: rgba(245, 247, 255, 0.85); 
+  border-bottom: 1px solid rgba(76, 29, 149, 0.2);
+}
+
+body.theme-light .cyber-blur-nav .text-white {
+  color: #1e293b;
+}
+
+body.theme-light .cyber-blur-nav .text-gray-300 {
+  color: #4b5563;
+}
+
+body.theme-light .cyber-blur-nav a:hover {
+  color: var(--primary) !important;
+}
+
 /* Theme-specific cyber text */
 .cyber-text {
   letter-spacing: 0.5px;
