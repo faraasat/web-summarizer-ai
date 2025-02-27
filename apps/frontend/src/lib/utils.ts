@@ -32,7 +32,8 @@ export function extractDomain(url: string): string {
     // Use URL API to extract hostname
     const urlObj = new URL(validateUrl(url));
     return urlObj.hostname;
-  } catch (_error) {
+  } catch (error) {
+    console.log(error);
     // If URL is invalid, return the original url
     return url;
   }
