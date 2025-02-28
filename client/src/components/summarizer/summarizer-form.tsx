@@ -79,14 +79,14 @@ export default function SummarizerForm({ onSummaryCreated }: SummarizerFormProps
           render={({ field }) => (
             <FormItem>
               <FormLabel>Website URL</FormLabel>
-              <div className="flex rounded-md shadow-sm">
-                <span className="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">
+              <div className="flex rounded-md shadow-sm relative z-10">
+                <span className="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm relative z-10">
                   https://
                 </span>
                 <FormControl>
                   <Input 
                     placeholder="example.com" 
-                    className="flex-1 min-w-0 block w-full px-3 py-2 rounded-none rounded-r-md focus:ring-primary focus:border-primary sm:text-sm border-gray-300"
+                    className="flex-1 min-w-0 block w-full px-3 py-2 rounded-none rounded-r-md focus:ring-primary focus:border-primary sm:text-sm border-gray-300 relative z-10"
                     {...field} 
                   />
                 </FormControl>
@@ -105,22 +105,24 @@ export default function SummarizerForm({ onSummaryCreated }: SummarizerFormProps
           render={({ field }) => (
             <FormItem>
               <FormLabel>AI Model</FormLabel>
-              <Select 
-                onValueChange={field.onChange} 
-                defaultValue={field.value}
-              >
-                <FormControl>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select an AI model" />
-                  </SelectTrigger>
-                </FormControl>
-                <SelectContent>
-                  <SelectItem value="general">General Purpose</SelectItem>
-                  <SelectItem value="technical">Technical Content</SelectItem>
-                  <SelectItem value="news">News Articles</SelectItem>
-                  <SelectItem value="academic">Academic Papers</SelectItem>
-                </SelectContent>
-              </Select>
+              <div className="z-20 relative">
+                <Select 
+                  onValueChange={field.onChange} 
+                  defaultValue={field.value}
+                >
+                  <FormControl>
+                    <SelectTrigger className="select-trigger z-20 relative">
+                      <SelectValue placeholder="Select an AI model" />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent className="select-content z-50">
+                    <SelectItem value="general">General Purpose</SelectItem>
+                    <SelectItem value="technical">Technical Content</SelectItem>
+                    <SelectItem value="news">News Articles</SelectItem>
+                    <SelectItem value="academic">Academic Papers</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
               <FormDescription>
                 Select the AI model that best fits your content type
               </FormDescription>

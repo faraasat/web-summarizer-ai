@@ -407,19 +407,28 @@ body.theme-light .text-white\/80 {
 
 /* Improved contrast for form elements in light theme */
 body.theme-light input, 
-body.theme-light textarea {
-  background-color: rgba(255, 255, 255, 0.95);
-  border-color: rgba(76, 29, 149, 0.4);
-  color: #0f172a;
+body.theme-light textarea,
+body.theme-light select,
+body.theme-light .select-trigger {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(76, 29, 149, 0.4) !important;
+  color: #0f172a !important;
+  z-index: 10 !important; /* Ensure elements are clickable */
 }
 
 body.theme-light input::placeholder, 
-body.theme-light textarea::placeholder {
-  color: #64748b;
+body.theme-light textarea::placeholder,
+body.theme-light select::placeholder {
+  color: #64748b !important;
+}
+
+body.theme-light .select-content,
+body.theme-light [data-radix-popper-content-wrapper] {
+  z-index: 99999 !important; /* Ensure dropdown content appears above other elements */
 }
 
 body.theme-light .bg-transparent {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.8) !important;
 }
 
 /* Toaster styling based on theme */
