@@ -1,5 +1,4 @@
 import logging
-import uvicorn
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, HTTPException
 from fastapi.exception_handlers import http_exception_handler
@@ -37,11 +36,3 @@ app.include_router(
 async def http_exception_handle_logging(request, exc):
     logger.error(f"HTTPException: {exc.status_code} {exc.detail}")
     return await http_exception_handler(request, exc)
-
-if __name__ == "__main__":
-    port = int(config.APP_PORT)
-
-    logger.info("Starting server...")
-    logger.info(f"Using port: {port}")
-
-    uvicorn.run(app, host="0.0.0.0", port=port)
