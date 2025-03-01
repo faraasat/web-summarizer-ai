@@ -427,6 +427,30 @@ body.theme-light [data-radix-popper-content-wrapper] {
   z-index: 99999 !important; /* Ensure dropdown content appears above other elements */
 }
 
+/* Improve Select hover/focus styling */
+.select-trigger:hover,
+.select-trigger:focus {
+  border-color: rgba(139, 92, 246, 0.5) !important;
+  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2) !important;
+}
+
+/* Themed select item hover states */
+body.theme-modern .select-item:hover {
+  background-color: rgba(139, 92, 246, 0.2) !important;
+}
+
+body.theme-dark .select-item:hover {
+  background-color: rgba(109, 40, 217, 0.2) !important;
+}
+
+body.theme-light .select-item:hover {
+  background-color: rgba(139, 92, 246, 0.1) !important;
+}
+
+body.theme-classic .select-item:hover {
+  background-color: rgba(76, 29, 149, 0.1) !important;
+}
+
 body.theme-light .bg-transparent {
   background-color: rgba(255, 255, 255, 0.8) !important;
 }

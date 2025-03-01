@@ -116,10 +116,10 @@ export default function SummarizerForm({ onSummaryCreated }: SummarizerFormProps
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent className="select-content z-50">
-                    <SelectItem value="general">General Purpose</SelectItem>
-                    <SelectItem value="technical">Technical Content</SelectItem>
-                    <SelectItem value="news">News Articles</SelectItem>
-                    <SelectItem value="academic">Academic Papers</SelectItem>
+                    <SelectItem value="general" className="select-item">General Purpose</SelectItem>
+                    <SelectItem value="technical" className="select-item">Technical Content</SelectItem>
+                    <SelectItem value="news" className="select-item">News Articles</SelectItem>
+                    <SelectItem value="academic" className="select-item">Academic Papers</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -133,7 +133,7 @@ export default function SummarizerForm({ onSummaryCreated }: SummarizerFormProps
         
         <Button 
           type="submit" 
-          className="w-full hover-lift relative overflow-hidden"
+          className="w-full hover-lift relative overflow-hidden gradient-animation glow-border shadow-lg hover:shadow-xl text-white px-8 py-6"
           disabled={isSummarizing}
         >
           {isSummarizing ? (
