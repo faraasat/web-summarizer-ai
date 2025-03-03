@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
+
+import _Layout from "@/components/layout";
+
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -22,8 +25,11 @@ const RootLayout = ({
 }>) => {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      <body className={`${spaceGrotesk.variable} antialiased`}>
-        <main>{children}</main>
+      <body
+        className={`${spaceGrotesk.variable} antialiased`}
+        suppressHydrationWarning={true}
+      >
+        <_Layout>{children}</_Layout>
       </body>
     </html>
   );

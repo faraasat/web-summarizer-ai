@@ -56,7 +56,7 @@ export default function BenefitsSection() {
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16 relative">
+        <div className="z-10 text-center mb-16 relative">
           <div className="absolute left-1/2 -translate-x-1/2 -top-10 w-40 h-1 gradient-animation rounded-full blur-sm opacity-70"></div>
           
           <h2 className="font-heading font-bold text-3xl md:text-4xl text-white glow-text">
@@ -69,27 +69,27 @@ export default function BenefitsSection() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative">
           {/* Background visualization */}
-          <div className="absolute opacity-10 left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 scale-150">
+          <div className="z-5 absolute opacity-10 left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 scale-150">
             <DataVisualizationIllustration width={600} height={600} />
           </div>
           
           {benefits.map((benefit, index) => (
             <div 
               key={index} 
-              className="cyber-blur rounded-xl p-6 border border-white/10 backdrop-blur-md hover:border-primary/30 transition-all hover:shadow-lg hover:shadow-primary/5 glow-border relative overflow-hidden group fade-in-up hover-lift"
+              className="z-10 cyber-blur rounded-xl p-6 border border-white/10 backdrop-blur-md hover:border-primary/30 transition-all hover:shadow-lg hover:shadow-primary/5 glow-border relative overflow-hidden group fade-in-up hover-lift"
               style={{
                 transitionDelay: benefit.delay,
                 animationDelay: benefit.delay
               }}
             >
               {/* Gradient background that shows on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-10 transition-opacity duration-500" style={{background: `linear-gradient(to bottom right, ${benefit.color.split(' ')[0].replace('from-', '')}, ${benefit.color.split(' ')[1].replace('to-', '')})` }}></div>
+              <div className="z-5 absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-10 transition-opacity duration-500" style={{background: `linear-gradient(to bottom right, ${benefit.color.split(' ')[0].replace('from-', '')}, ${benefit.color.split(' ')[1].replace('to-', '')})` }}></div>
               
-              <div className={`w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br ${benefit.color} mb-5 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+              <div className={`relative z-10 w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br ${benefit.color} mb-5 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                 {benefit.icon}
               </div>
-              <h3 className="font-heading font-semibold text-xl mb-3 text-white">{benefit.title}</h3>
-              <p className="text-gray-300 font-body">
+              <h3 className="relative z-10 font-heading font-semibold text-xl mb-3 text-white">{benefit.title}</h3>
+              <p className="relative z-10 text-gray-300 font-body">
                 {benefit.description}
               </p>
             </div>
