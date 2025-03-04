@@ -1,3 +1,5 @@
+"use client"
+
 import { useState, useEffect, useRef } from 'react';
 import { useTheme } from '@/contexts/ThemeContext';
 import { Palette, Sun, Moon, Star, Monitor, Check } from 'lucide-react';
@@ -62,7 +64,7 @@ export function ThemeSwitcher() {
       {/* Button with current theme color */}
       <button
         onClick={toggleDropdown}
-        className={`flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-700/30 transition-all text-white cyber-blur p-1 border border-white/10 group`}
+        className={`cursor-pointer flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-700/30 transition-all text-white cyber-blur p-1 border border-white/10 group`}
         style={{
           boxShadow: isOpen ? `0 0 12px 3px rgba(173, 109, 255, 0.3)` : 'none'
         }}
@@ -92,7 +94,7 @@ export function ThemeSwitcher() {
             {themes.map((t) => (
               <button
                 key={t.id}
-                className={`w-full text-left px-4 py-3 flex items-center space-x-3 transition-all ${
+                className={`cursor-pointer w-full text-left px-4 py-3 flex items-center space-x-3 transition-all ${
                   theme === t.id ? `${t.bgColor} border-l-2 border-primary` : 'hover:bg-white/5 border-l-2 border-transparent'
                 }`}
                 onClick={() => {

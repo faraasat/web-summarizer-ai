@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Space_Grotesk } from "next/font/google";
+import { Space_Grotesk, Orbitron } from "next/font/google";
 
 import _Layout from "@/components/layout";
 
@@ -7,6 +7,11 @@ import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
+  subsets: ["latin"],
+});
+
+const orbitron = Orbitron({
+  variable: "--font-orbitron",
   subsets: ["latin"],
 });
 
@@ -26,7 +31,7 @@ const RootLayout = ({
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body
-        className={`${spaceGrotesk.variable} antialiased`}
+        className={`${spaceGrotesk.variable} ${orbitron.variable} antialiased`}
         suppressHydrationWarning={true}
       >
         <_Layout>{children}</_Layout>
