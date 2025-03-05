@@ -6,46 +6,9 @@
     @apply border-border;
   }
 
-  /* Base body styles */
   body {
     @apply font-sans antialiased bg-background text-foreground;
     min-height: 100vh;
-  }
-
-  /* Theme-specific styles */
-  body.theme-modern {
-    background: linear-gradient(135deg, #271866, #4c1d95);
-    background-size: 200% 200%;
-    animation: gradientBgShift 15s ease infinite;
-    @apply text-gray-100;
-  }
-
-  body.theme-dark {
-    background: linear-gradient(to bottom, #0f0f0f, #1a1a1a);
-    @apply text-gray-200;
-  }
-
-  body.theme-light {
-    background: linear-gradient(135deg, #ffffff, #f1f5f9);
-    @apply text-gray-800;
-    color-scheme: light;
-  }
-
-  body.theme-classic {
-    background: linear-gradient(135deg, #0f172a, #1e3a8a);
-    @apply text-gray-100;
-  }
-
-  @keyframes gradientBgShift {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
   }
 
   .font-heading {
@@ -54,6 +17,18 @@
 
   .font-body {
     font-family: var(--font-space-grotesk), "Space Grotesk", sans-serif;
+  }
+}
+
+@keyframes gradientBgShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 
@@ -99,28 +74,38 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
-body.theme-modern {
+.modern {
+  --background: linear-gradient(135deg, #271866, #4c1d95);
   --primary: #9333ea; /* Brighter purple */
   --secondary: #4f46e5; /* Indigo */
   --accent: #e879f9; /* Brighter pink */
 }
 
-body.theme-dark {
+.dark {
+  --background: linear-gradient(to bottom, #0f0f0f, #1a1a1a);
   --primary: #6d28d9;
   --secondary: #2563eb;
   --accent: #db2777;
 }
 
-body.theme-light {
+.light {
+  --background: linear-gradient(135deg, #ffffff, #f1f5f9);
   --primary: #6d28d9; /* Darker purple for better contrast in light mode */
   --secondary: #2563eb; /* Darker blue for better contrast in light mode */
   --accent: #dc2626; /* Brighter red for more visibility in light mode */
 }
 
-body.theme-classic {
+.classic {
+  --background: linear-gradient(135deg, #0f172a, #1e3a8a);
   --primary: #8b5cf6; /* Lighter purple than dark theme */
   --secondary: #3b82f6; /* Lighter blue */
   --accent: #d946ef; /* Bright magenta */
+}
+
+body {
+  background: var(--background);
+  background-size: 200% 200%;
+  animation: gradientBgShift 15s ease infinite;
 }
 
 /* Metaverse glowing effects */
@@ -130,24 +115,24 @@ body.theme-classic {
 }
 
 /* Theme-specific glow text effects */
-body.theme-modern .glow-text {
+body.modern .glow-text {
   text-shadow: 0 0 10px rgba(147, 51, 234, 0.7),
     0 0 20px rgba(147, 51, 234, 0.5), 0 0 30px rgba(147, 51, 234, 0.3);
 }
 
-body.theme-dark .glow-text {
+body.dark .glow-text {
   text-shadow: 0 0 10px rgba(109, 40, 217, 0.7),
     0 0 20px rgba(109, 40, 217, 0.5), 0 0 30px rgba(109, 40, 217, 0.3);
 }
 
-body.theme-light .glow-text {
+body.light .glow-text {
   text-shadow: 0 0 10px rgba(109, 40, 217, 0.6),
     0 0 20px rgba(109, 40, 217, 0.4), 0 0 30px rgba(109, 40, 217, 0.3);
   color: #4c1d95; /* Make the text darker in light theme for better contrast */
   font-weight: 700; /* Bolder text in light theme for better readability */
 }
 
-body.theme-classic .glow-text {
+body.classic .glow-text {
   text-shadow: 0 0 10px rgba(59, 130, 246, 0.7),
     /* Blue glow instead of purple */ 0 0 20px rgba(59, 130, 246, 0.5),
     0 0 30px rgba(59, 130, 246, 0.3);
@@ -160,22 +145,22 @@ body.theme-classic .glow-text {
 }
 
 /* Theme-specific glow border effects */
-body.theme-modern .glow-border {
+body.modern .glow-border {
   box-shadow: 0 0 10px rgba(139, 92, 246, 0.4), 0 0 20px rgba(139, 92, 246, 0.2),
     inset 0 0 10px rgba(139, 92, 246, 0.2);
 }
 
-body.theme-dark .glow-border {
+body.dark .glow-border {
   box-shadow: 0 0 10px rgba(109, 40, 217, 0.4), 0 0 20px rgba(109, 40, 217, 0.2),
     inset 0 0 10px rgba(109, 40, 217, 0.2);
 }
 
-body.theme-light .glow-border {
+body.light .glow-border {
   box-shadow: 0 0 10px rgba(109, 40, 217, 0.3), 0 0 20px rgba(109, 40, 217, 0.1),
     inset 0 0 10px rgba(109, 40, 217, 0.1);
 }
 
-body.theme-classic .glow-border {
+body.classic .glow-border {
   box-shadow: 0 0 10px rgba(59, 130, 246, 0.4), 0 0 20px rgba(59, 130, 246, 0.2),
     inset 0 0 10px rgba(59, 130, 246, 0.2);
 }
@@ -192,7 +177,7 @@ body.theme-classic .glow-border {
 }
 
 /* Theme-specific grid */
-body.theme-modern .grid-bg {
+body.modern .grid-bg {
   background-image: linear-gradient(
       to right,
       rgba(139, 92, 246, 0.1) 1px,
@@ -201,7 +186,7 @@ body.theme-modern .grid-bg {
     linear-gradient(to bottom, rgba(139, 92, 246, 0.1) 1px, transparent 1px);
 }
 
-body.theme-dark .grid-bg {
+body.dark .grid-bg {
   background-image: linear-gradient(
       to right,
       rgba(109, 40, 217, 0.1) 1px,
@@ -210,7 +195,7 @@ body.theme-dark .grid-bg {
     linear-gradient(to bottom, rgba(109, 40, 217, 0.1) 1px, transparent 1px);
 }
 
-body.theme-light .grid-bg {
+body.light .grid-bg {
   background-image: linear-gradient(
       to right,
       rgba(76, 29, 149, 0.15) 1px,
@@ -219,7 +204,7 @@ body.theme-light .grid-bg {
     linear-gradient(to bottom, rgba(76, 29, 149, 0.15) 1px, transparent 1px);
 }
 
-body.theme-classic .grid-bg {
+body.classic .grid-bg {
   background-image: linear-gradient(
       to right,
       rgba(59, 130, 246, 0.1) 1px,
@@ -236,24 +221,24 @@ body.theme-classic .grid-bg {
 }
 
 /* Theme-specific cyber blur */
-body.theme-modern .cyber-blur {
+body.modern .cyber-blur {
   background: rgba(30, 15, 60, 0.65); /* More vibrant purple */
   border: 1px solid rgba(147, 51, 234, 0.25);
 }
 
-body.theme-dark .cyber-blur {
+body.dark .cyber-blur {
   background: rgba(15, 15, 20, 0.6);
   border: 1px solid rgba(109, 40, 217, 0.2);
 }
 
-body.theme-light .cyber-blur {
+body.light .cyber-blur {
   background: rgba(245, 247, 255, 0.95);
   border: 1px solid rgba(76, 29, 149, 0.5);
   color: #1f2937; /* Darker text for light theme */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-body.theme-classic .cyber-blur {
+body.classic .cyber-blur {
   background: rgba(15, 30, 75, 0.7); /* More blue-tinted and deeper */
   border: 1px solid rgba(59, 130, 246, 0.3); /* Blue border instead of purple */
   box-shadow: 0 0 20px rgba(59, 130, 246, 0.2); /* Blue glow */
@@ -273,7 +258,7 @@ body.theme-classic .cyber-blur {
 }
 
 /* Theme-specific gradients */
-body.theme-light .gradient-animation {
+body.light .gradient-animation {
   background: linear-gradient(
     130deg,
     hsl(263, 70%, 40%),
@@ -285,7 +270,7 @@ body.theme-light .gradient-animation {
   animation: gradientShift 10s ease infinite;
 }
 
-body.theme-classic .gradient-animation {
+body.classic .gradient-animation {
   background: linear-gradient(
     130deg,
     hsl(217, 91%, 60%),
@@ -442,20 +427,20 @@ body.theme-classic .gradient-animation {
 }
 
 /* Theme-specific navbar styles */
-body.theme-light .cyber-blur-nav {
+body.light .cyber-blur-nav {
   background-color: rgba(245, 247, 255, 0.85);
   border-bottom: 1px solid rgba(76, 29, 149, 0.2);
 }
 
-body.theme-light .cyber-blur-nav .text-white {
+body.light .cyber-blur-nav .text-white {
   color: #1e293b;
 }
 
-body.theme-light .cyber-blur-nav .text-gray-300 {
+body.light .cyber-blur-nav .text-gray-300 {
   color: #4b5563;
 }
 
-body.theme-light .cyber-blur-nav a:hover {
+body.light .cyber-blur-nav a:hover {
   color: var(--primary) !important;
 }
 
@@ -465,53 +450,53 @@ body.theme-light .cyber-blur-nav a:hover {
 }
 
 /* Theme-specific text colors */
-body.theme-light {
+body.light {
   --text-color: #0f172a; /* Darker text for better contrast on light backgrounds */
   color: var(--text-color);
 }
 
-body.theme-light h1,
-body.theme-light h2,
-body.theme-light h3,
-body.theme-light h4,
-body.theme-light h5,
-body.theme-light h6 {
+body.light h1,
+body.light h2,
+body.light h3,
+body.light h4,
+body.light h5,
+body.light h6 {
   color: #1e293b;
 }
 
-body.theme-light .text-white {
+body.light .text-white {
   color: #0f172a; /* Much darker text for maximum contrast */
 }
 
-body.theme-light .text-gray-300,
-body.theme-light .text-gray-200 {
+body.light .text-gray-300,
+body.light .text-gray-200 {
   color: #334155; /* Dark slate for paragraph text with better contrast */
 }
 
-body.theme-light .text-white\/70,
-body.theme-light .text-white\/80 {
+body.light .text-white\/70,
+body.light .text-white\/80 {
   color: #334155; /* Consistent dark slate for better readability */
 }
 
 /* Improved contrast for form elements in light theme */
-body.theme-light input,
-body.theme-light textarea,
-body.theme-light select,
-body.theme-light .select-trigger {
+body.light input,
+body.light textarea,
+body.light select,
+body.light .select-trigger {
   background-color: rgba(255, 255, 255, 0.95) !important;
   border-color: rgba(76, 29, 149, 0.4) !important;
   color: #0f172a !important;
   z-index: 10 !important; /* Ensure elements are clickable */
 }
 
-body.theme-light input::placeholder,
-body.theme-light textarea::placeholder,
-body.theme-light select::placeholder {
+body.light input::placeholder,
+body.light textarea::placeholder,
+body.light select::placeholder {
   color: #64748b !important;
 }
 
-body.theme-light .select-content,
-body.theme-light [data-radix-popper-content-wrapper] {
+body.light .select-content,
+body.light [data-radix-popper-content-wrapper] {
   z-index: 99999 !important; /* Ensure dropdown content appears above other elements */
 }
 
@@ -523,46 +508,24 @@ body.theme-light [data-radix-popper-content-wrapper] {
 }
 
 /* Themed select item hover states */
-body.theme-modern .select-item:hover {
+.modern .select-item:hover {
   background-color: rgba(139, 92, 246, 0.2) !important;
 }
 
-body.theme-dark .select-item:hover {
+.dark .select-item:hover {
   background-color: rgba(109, 40, 217, 0.2) !important;
 }
 
-body.theme-light .select-item:hover {
+.light .select-item:hover {
   background-color: rgba(139, 92, 246, 0.1) !important;
 }
 
-body.theme-classic .select-item:hover {
+.classic .select-item:hover {
   background-color: rgba(76, 29, 149, 0.1) !important;
 }
 
-body.theme-light .bg-transparent {
+.light .bg-transparent {
   background-color: rgba(255, 255, 255, 0.8) !important;
-}
-
-/* Toaster styling based on theme */
-body.theme-modern .toaster {
-  --toast-background: rgba(20, 10, 35, 0.8);
-  --toast-border: rgba(173, 109, 255, 0.2);
-}
-
-body.theme-dark .toaster {
-  --toast-background: rgba(15, 15, 15, 0.9);
-  --toast-border: rgba(109, 40, 217, 0.2);
-}
-
-body.theme-light .toaster {
-  --toast-background: rgba(255, 255, 255, 0.9);
-  --toast-border: rgba(139, 92, 246, 0.2);
-  --toast-text: #1f2937;
-}
-
-body.theme-classic .toaster {
-  --toast-background: rgba(10, 17, 40, 0.8);
-  --toast-border: rgba(76, 29, 149, 0.3);
 }
 
 /* Override toaster styles */
