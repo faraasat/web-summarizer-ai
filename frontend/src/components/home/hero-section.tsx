@@ -48,7 +48,7 @@ export default function HeroSection() {
               </Link>
               <a
                 href="#how-it-works"
-                className="inline-flex items-center justify-center px-8 py-4 border border-primary/30 text-base font-medium rounded-md shadow-lg text-white hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all backdrop-blur-sm"
+                className="inline-flex items-center justify-center px-8 py-4 border border-primary/30 text-base font-medium rounded-md shadow-lg text-[var(--foreground)] hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all backdrop-blur-sm"
               >
                 How It Works
               </a>
