@@ -1,4 +1,5 @@
 import { Send, Mail, BellRing } from "lucide-react";
+import WordGlower from "../ui/word-glower";
 
 export default function NewsletterSection() {
   return (
@@ -27,11 +28,7 @@ export default function NewsletterSection() {
                 <Mail className="w-8 h-8 text-primary" />
               </div>
               <h2 className="font-heading font-bold text-3xl md:text-4xl text-white glow-text">
-                Join Our{" "}
-                <span className="relative z-10 bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent font-bold">
-                  Neural
-                </span>{" "}
-                Network
+                Join Our <WordGlower>Network</WordGlower>!
               </h2>
               <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto font-body">
                 Subscribe to receive updates on our latest AI models, feature
@@ -99,8 +96,8 @@ export default function NewsletterSection() {
                 <div className="flex items-center text-sm text-gray-300">
                   <BellRing className="flex-shrink-0 h-5 w-5 text-primary mr-3" />
                   <span>
-                    Neural network subscribers receive prioritized access to new
-                    AI model releases and experimental features.
+                    Network subscribers receive prioritized access to new AI
+                    model releases and experimental features.
                   </span>
                 </div>
               </div>

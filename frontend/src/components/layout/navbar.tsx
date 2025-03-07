@@ -11,13 +11,13 @@ const navData = [
 
 export default function Navbar() {
   return (
-    <header className="bg-black/80 backdrop-blur-md border-b border-white/10 sticky top-0 z-50 cyber-blur-nav">
+    <header className="bg-[var(--background)]/80 text-[var(--foreground)] backdrop-blur-md border-b border-white/10 sticky top-0 z-50 cyber-blur-nav">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
               <i className="ri-brain-line text-3xl text-primary mr-2 glow-text"></i>
-              <span className="font-heading font-bold text-lg sm:text-xl text-white cyber-text">
+              <span className="font-heading font-bold text-lg sm:text-xl cyber-text">
                 AI Content Summarizer
               </span>
             </Link>

@@ -4,6 +4,7 @@ import {
   VirtualWorldIllustration,
 } from "@/components/ui/illustrations";
 import { ArrowRight, Sparkles } from "lucide-react";
+import WordGlower from "../ui/word-glower";
 
 export default function HeroSection() {
   return (
@@ -27,10 +28,7 @@ export default function HeroSection() {
             </div>
 
             <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-white glow-text leading-tight">
-              Summarize Any Website{" "}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-violet-500 animate-pulse px-1">
-                Instantly
-              </span>
+              Summarize Any Website <WordGlower>Instantly</WordGlower>
             </h1>
             <p className="font-body text-lg text-gray-300 md:pr-12">
               Get concise, AI-powered summaries of any website or web app. Save
@@ -48,7 +46,7 @@ export default function HeroSection() {
               </Link>
               <a
                 href="#how-it-works"
-                className="inline-flex items-center justify-center px-8 py-4 border border-primary/30 text-base font-medium rounded-md shadow-lg text-[var(--foreground)] hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all backdrop-blur-sm"
+                className="inline-flex items-center justify-center px-8 py-4 border border-primary/30 text-base font-medium rounded-md shadow-lg text-[var(--background)] hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all backdrop-blur-sm"
               >
                 How It Works
               </a>

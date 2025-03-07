@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="md:col-span-2">
             <div className="flex items-center mb-4">
               <i className="ri-file-search-line text-2xl text-primary mr-2"></i>
-              <span className="font-heading font-bold text-xl">
+              <span className="font-heading text-[var(--foreground)] font-bold text-xl">
                 Website & Web App Summarizer
               </span>
             </div>
@@ -43,7 +43,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-heading font-semibold text-lg mb-4">
+            <h3 className="font-heading text-[var(--foreground)] font-semibold text-lg mb-4">
               Quick Links
             </h3>
             <ul className="space-y-2">
@@ -83,7 +83,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-heading font-semibold text-lg mb-4">Legal</h3>
+            <h3 className="font-heading text-[var(--foreground)] font-semibold text-lg mb-4">Legal</h3>
             <ul className="space-y-2">
               <li>
                 <a

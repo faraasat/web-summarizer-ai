@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Globe, Download, ArrowRight, Play, Cpu, Zap } from "lucide-react";
 import { DataVisualizationIllustration } from "@/components/ui/illustrations";
+import WordGlower from "../ui/word-glower";
 
 const steps = [
   {
@@ -57,11 +58,7 @@ export default function HowToUseSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16 relative">
           <h2 className="font-heading font-bold text-3xl md:text-4xl text-white glow-text">
-            How Our{" "}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-violet-500 px-1">
-              Neural
-            </span>{" "}
-            Summarizer Works
+            How Our <WordGlower>Summarizer</WordGlower> Works
           </h2>
           <p className="mt-4 text-lg text-gray-300 max-w-3xl mx-auto font-body">
             Experience a revolutionary approach to content summarization in four
@@ -121,7 +118,9 @@ export default function HowToUseSection() {
                 <h3 className="z-10 font-heading font-semibold text-xl mb-3 text-white group-hover:text-primary transition-colors">
                   {step.title}
                 </h3>
-                <p className="z-10 text-gray-300 font-body">{step.description}</p>
+                <p className="z-10 text-gray-300 font-body">
+                  {step.description}
+                </p>
               </div>
             </div>
           ))}
