@@ -1,3 +1,4 @@
+import { Heart } from "lucide-react";
 import Link from "next/link";
 
 export default function Footer() {
@@ -83,7 +84,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-heading text-[var(--foreground)] font-semibold text-lg mb-4">Legal</h3>
+            <h3 className="font-heading text-[var(--foreground)] font-semibold text-lg mb-4">
+              Legal
+            </h3>
             <ul className="space-y-2">
               <li>
                 <a
@@ -118,8 +121,11 @@ export default function Footer() {
             &copy; {currentYear} Website & Web App Summarizer. All rights
             reserved.
           </p>
-          <p className="text-gray-400 text-sm mt-2 md:mt-0">
-            Made with <i className="ri-heart-fill text-red-500"></i> using React
+          <p className="flex items-center gap-1 text-gray-400 text-sm mt-2 md:mt-0">
+            Made with <Heart className="stroke-0 fill-red-600" /> By{" "}
+            <Link href="https://www.farasat.me/" target="_blank" className="underline">
+              Farasat Ali
+            </Link>
           </p>
         </div>
       </div>

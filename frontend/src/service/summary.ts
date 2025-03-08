@@ -1,6 +1,8 @@
 "use server";
 
-export const getSummary = async (url: string, modelType: string) => {
+import { IModelType } from "@/data/model";
+
+export const getSummary = async (url: string, modelType: IModelType) => {
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/summarize?url=${url}&modelType=${modelType}`
   );

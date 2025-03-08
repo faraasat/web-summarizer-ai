@@ -25,6 +25,7 @@ import { validateUrl } from "@/lib/utils";
 import { ISummary } from "./summarizer-root";
 import { getSummary } from "@/service/summary";
 import { useState } from "react";
+import { modelNames, modelTypes } from "@/data/model";
 
 const formSchema = z.object({
   url: z
@@ -58,7 +59,7 @@ export default function SummarizerForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
       url: "",
-      modelType: "general",
+      modelType: modelNames[0],
     },
   });
 
@@ -67,7 +68,7 @@ export default function SummarizerForm({
     try {
       const cleanUrl = data.url.replace(/^https?:\/\//, "");
 
-      const summary = await getSummary(cleanUrl, data.modelType);
+      const summary = await getSummary(cleanUrl, modelTypes[data.modelType]);
 
       onSummaryCreated(summary);
     } catch (error) {
@@ -126,18 +127,15 @@ export default function SummarizerForm({
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent className="select-content z-50">
-                    <SelectItem value="general" className="select-item">
-                      General Purpose
-                    </SelectItem>
-                    <SelectItem value="technical" className="select-item">
-                      Technical Content
-                    </SelectItem>
-                    <SelectItem value="news" className="select-item">
-                      News Articles
-                    </SelectItem>
-                    <SelectItem value="academic" className="select-item">
-                      Academic Papers
-                    </SelectItem>
+                    {modelNames.map((item, idx) => (
+                      <SelectItem
+                        key={idx}
+                        value={item}
+                        className="select-item"
+                      >
+                        {item}
+                      </SelectItem>
+                    ))}
                   </SelectContent>
                 </Select>
               </div>
