@@ -1,0 +1,9 @@
+ruff
+black
+isort
+pytest
+httpx
+pytest-mock
+anyio
+pytest-asyncio
+pyfakefs
