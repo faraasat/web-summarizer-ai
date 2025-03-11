@@ -1,12 +1,11 @@
 {
-  "name": "web-summarizer-ai",
+  "name": "@repo/apps",
   "version": "1.0.0",
   "type": "module",
-  "license": "CC0",
   "private": true,
   "workspaces": [
-    "apps/*",
-    "packages/*"
+    "frontend",
+    "backend"
   ],
   "scripts": {
     "dev": "turbo run dev",

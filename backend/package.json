@@ -1,8 +1,0 @@
-{
-  "name": "backend",
-  "scripts": {
-    "install": "pip install -r requirements.txt",
-    "install-dev": "pip install -r requirements.txt requirements-dev.txt",
-    "dev": "env/bin/python -m uvicorn summarizer_api.main:app --reload"
-  }
-}
