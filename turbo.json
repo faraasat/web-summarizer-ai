@@ -8,6 +8,14 @@
     "dev": {
       "persistent": true,
       "cache": false
+    },
+    "py-install": {
+      "persistent": false,
+      "cache": true
+    },
+    "py-install-dev": {
+      "persistent": false,
+      "cache": true
     }
   }
 }
