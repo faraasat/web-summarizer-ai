@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "py-install": "python -m venv virt_env & source virt_env/bin/activate & pip install -r requirements.txt",
-    "py-install-dev": "python -m venv virt_env & source virt_env/bin/activate & pip install -r requirements.txt -r requirements-dev.txt",
-    "dev": "virt_env/bin/python -m uvicorn summarizer_api.main:app --reload"
+    "py-install": "python -m .venv & source .venv/bin/activate & pip install -r requirements.txt",
+    "py-install-dev": "python -m .venv & source .venv/bin/activate & pip install -r requirements.txt -r requirements-dev.txt",
+    "dev": ".venv/bin/python -m uvicorn summarizer_api.main:app --reload"
   }
 }

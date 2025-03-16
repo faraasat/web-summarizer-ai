@@ -5,3 +5,5 @@ pydantic-settings
 python-json-logger
 logtail-python
 aiofiles
+asgi_correlation_id
+rich

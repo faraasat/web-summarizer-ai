@@ -1,26 +1,25 @@
 from typing import Optional
+
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from functools import lru_cache
 
 
 class BaseConfig(BaseSettings):
-    """
-    Base configuration class for the application settings.
-    It uses Pydantic's BaseSettings to load environment variables
-    and provides a convenient way to manage application settings.
-    """
+    ENV_STATE: Optional[str] = None
 
-    ENV_STATE = Optional[str] = None
-
-    model_config = SettingsConfigDict(env_file=".env", extra="allow")
+    model_config = SettingsConfigDict(env_file="../../.env", extra="allow")
 
 
 class GlobalConfig(BaseConfig):
-    AI_MODEL_KEY: str = None
+    AI_MODEL_KEY: str = ""
 
 
-class ProdConfig(BaseConfig):
+class ProdConfig(GlobalConfig):
     model_config = SettingsConfigDict(env_prefix="PROD_", extra="allow")
+
+
+class DevConfig(GlobalConfig):
+    model_config = SettingsConfigDict(env_prefix="DEV_", extra="allow")
 
 
 class TestConfig(GlobalConfig):
@@ -30,13 +29,13 @@ class TestConfig(GlobalConfig):
     model_config = SettingsConfigDict(env_prefix="TEST_", extra="allow")
 
 
-@lru_cache
+@lru_cache()
 def get_config(env_state: str):
-    configs = {
-        "prod": ProdConfig,
-        "test": TestConfig,
-    }
+    configs = {"dev": DevConfig, "prod": ProdConfig, "test": TestConfig}
+    if env_state not in configs:
+        return configs["dev"]
 
-    return configs[env_state]()
+    return configs[env_state]
+
 
 config = get_config(BaseConfig().ENV_STATE)

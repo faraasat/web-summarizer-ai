@@ -1,14 +1,14 @@
 # Installation Guide
 
 ```shell
-    python -m venv virt_env
+    python -m venv .venv
 
     # for linux/mac
-    source virt_env/bin/activate
+    source .venv/bin/activate
 
     # For Windows
-    virt_env/Scripts/activate.bat # In CMD
-    virt_env/Scripts/Activate.ps1 # In Powershell
+    .venv/Scripts/activate.bat # In CMD
+    .venv/Scripts/Activate.ps1 # In Powershell
 
     pip install -r requirements.txt
 
