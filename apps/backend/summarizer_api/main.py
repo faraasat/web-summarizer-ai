@@ -1,3 +1,4 @@
+import debugpy
 import logging
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, HTTPException
@@ -36,3 +37,7 @@ app.include_router(
 async def http_exception_handle_logging(request, exc):
     logger.error(f"HTTPException: {exc.status_code} {exc.detail}")
     return await http_exception_handler(request, exc)
+
+
+if config.ENV_STATE == "dev":
+    debugpy.listen(5678)
